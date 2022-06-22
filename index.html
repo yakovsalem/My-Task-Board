@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task board - Project 1 - JavaScript + HTML5 + CSS3</title>
+    <script defer src="main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1>My Task Board</h1>
+    </div>
+
+<div class="inputTask">
+    <div class="inputText">
+        <textarea name="taskDetails" id="taskTextBox" cols="30" rows="3" placeholder="Write your Task here:"></textarea>.
+    </div>
+    <div class="sideBar">
+        <input type="date" id="dateBox" onfocus="this.min=new Date().toISOString().split('T')[0]">
+        <input type="time" id="timeBox">
+        <button type="button" id="addBtn" onclick="addTask()">Add +</button>
+        <button type="button" id="updateBtn" onclick="updateTask()">Update</button>
+        <button type="button" id="clearBtn" onclick="clearForm()">Clear</button>
+    </div>
+</div>
+
+<div class="taskNotesArea" id="taskNotesArea">
+    <!-- <div class="note" style="box-shadow: 3px 7px 10px 0 rgba(0,0,0,0.25);">
+        <i class="bi-x-square-fill removeBtn" onclick="removeTask(this)"></i>
+        <button onclick="removeTask(this)">X</button>
+        <div class="noteText">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos itaque rem nesciunt qui perferendis natus minima repellat atque maxime inventore? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos itaque rem nesciunt qui perferendis natus</div>
+        <div class="noteData">
+            <p>30/12/2022</p>
+            <p>23:45</p>
+        </div>
+    </div>
+    <div class="note"></div>
+    <div class="note"></div> -->
+
+</div>
+
+    
+</body>
+</html>
