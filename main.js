@@ -30,7 +30,6 @@ function addTask(){
 function readStorage(){
     const str = localStorage.getItem("tasks");
     const tasks = str === null? [] : JSON.parse(str);
-    // const tasks = JSON.parse(localStorage.getItem("tasks"));
     return tasks;
 }
 
@@ -113,7 +112,6 @@ function selectTask(id){
     timeBox.value = taskSelected.time;
     addBtn.style.display = "none";
     updateBtn.style.display = "block";
-    // markTask(id);
 }
 
 function updateTask(){
@@ -162,17 +160,4 @@ function generateID(){
     const id = Date.now();
     return id;
 }
-
-
-
-// function correctDate(){
-//     var today = new Date();
-//     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-//     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-//     var dateTime = date+' '+time;
-//     console.log(date.valueAsNumber)
-//     console.log(dateBox.valueAsNumber)
-//     return date;
-// }
-
 
