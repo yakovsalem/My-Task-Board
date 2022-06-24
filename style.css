@@ -19,7 +19,7 @@ body {
     background-size: 100%;
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .inputText{
@@ -98,15 +98,6 @@ button:hover, input:hover {
     /* animation-name: fadeIn;
     animation-duration: 1s; */
 }
-/* .note{
-    background-image: url(Assets/img/notebg.png);
-    height: 500px;
-    width: 400px;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    box-sizing: border-box;
-    margin: 10px;
-} */
 
 .noteText{
     font-size: x-large;

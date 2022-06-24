@@ -1,9 +1,5 @@
 let allTasks = [];
-let taskSelected;
 
-
-addBtn.style.display = "block";
-updateBtn.style.display = "none";
 
 loadStorage();
 
@@ -46,31 +42,13 @@ function saveStorage(allTasks){
     localStorage.setItem("tasks" , JSON.stringify(allTasks));
 }
 
-// function printTask(task){
-//     // const notesArea = document.getElementById("taskNotesArea");
-//     const div = document.createElement("div");
-//     div.id = task.id;
-//     div.className = "note";
-//     // div.onclick = selectTask(task.id);
-//     div.onclick = function () {
-//         this.parentElement.selectTask(task.id);
-//     };
-//     div.innerHTML = `
-//         <i class="bi-x-square-fill removeBtn" onclick="removeTask(${task.id})"></i>
-//         <div class="noteText">${task.taskText}</div>
-//         <div class="noteData">
-//         <p>${task.date}</p>
-//         <p>${task.time}</p>
-//      `;
-//     document.getElementById("taskNotesArea").appendChild(div);
-// }
 
 function printTasks(allTasks){
     const notesArea = document.getElementById("taskNotesArea");
     notesArea.innerHTML = "";
     for(const obj of allTasks){
         const note = `
-        <div class="note" onclick="selectTask(${obj.id})" id="${obj.id}">
+        <div class="note" id="${obj.id}">
             <i class="bi-x-square-fill removeBtn" onclick="removeTask(${obj.id})"></i>
             <div class="noteText">${obj.taskText}</div>
             <div class="noteData">
@@ -103,35 +81,6 @@ function taskEnd(){
         }
     }
 }
-
-function selectTask(id){
-    allTasks = readStorage ();
-    taskSelected = allTasks.find((current) => current.id == id);
-    taskTextBox.value = taskSelected.taskText;
-    dateBox.value = taskSelected.date;
-    timeBox.value = taskSelected.time;
-    addBtn.style.display = "none";
-    updateBtn.style.display = "block";
-}
-
-function updateTask(){
-    if(!valid()){
-        return;
-    }
-    allTasks = readStorage ();
-    const task = setTask();
-    task.id = taskSelected.id;
-    let index = allTasks.findIndex((current) => current.id == taskSelected.id);
-    allTasks[index] = task;
-    saveStorage(allTasks);
-    printTasks(allTasks);
-    clearForm();
-    taskSelected = null;
-    addBtn.style.display = "block";
-    updateBtn.style.display = "none";
-}
-
-
 
 function valid(){
     if(taskTextBox.value === ""){
