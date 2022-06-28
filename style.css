@@ -1,6 +1,12 @@
+@font-face {
+    font-family: hebrewFont;
+    src: url(Assets/fonts/dana-yad-alefalefalef/DanaYadAlefAlefAlef-Normal.otf);
+
+}
+
 body {
     background-image: url("Assets/img/tile.jpg");
-    font-family: 'Kalam', cursive;
+    font-family: 'Kalam', hebrewFont;
 }
 
 .header{
@@ -9,17 +15,26 @@ body {
     font-size: xx-large;
 }
 
+.helpBtn{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    margin-top: -20px;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0.99);
+}
+
 .inputTask{
     height: 250px;
-    width: 50%;
+    width: 900px;
     margin: auto;
     background-image: url("Assets/img/formbg.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-    box-sizing: border-box;
     display: flex;
-    /* flex-wrap: wrap; */
 }
 
 .inputText{
@@ -40,7 +55,7 @@ textarea{
     resize: none;
     line-height: 1.23;
     border: 0; 
-    font-family: 'Kalam', cursive;
+    font-family: 'Kalam', hebrewFont;
 }
 
 textarea:focus{
@@ -48,6 +63,7 @@ textarea:focus{
 }
 
 input, button{
+    text-transform: uppercase;
     border: none;
     /* border-radius: 8px; */
     background-color: rgb(232, 203, 166);
@@ -56,16 +72,18 @@ input, button{
     width: 130px;
     text-align: center;
     font-size: 16px;
-    box-shadow: 0 17px 50px 0 rgba(0,0,0,0.19);
-    transition-duration: 0.4s;
 }
 
-  
+
 button:hover, input:hover {
     background-color: rgb(101, 74, 38);
     color: white;
-    box-shadow: 3px 7px 10px 0 rgba(0,0,0,0.25);
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.60);
+    transition-duration: 0.5s;
+}
 
+button:not(hover), input:not(hover) {
+    transition-duration: 0.5s;
 }
 
 .taskNotesArea{
@@ -75,7 +93,6 @@ button:hover, input:hover {
     flex-flow: row wrap;
     /* justify-content: center; */
     height: 100%;
-
 }
 
 @keyframes fadeIn {
@@ -94,9 +111,19 @@ button:hover, input:hover {
     background-repeat: no-repeat;
     background-size: 100%;
     box-sizing: border-box;
-    margin: 10px;
-    /* animation-name: fadeIn;
-    animation-duration: 1s; */
+}
+
+.note:hover{
+    margin-top: -10px;
+    transition-duration: 0.4s;
+}
+.note:not(hover){
+    transition-duration: 0.4s;
+}
+
+.note:last-child {
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }
 
 .noteText{
@@ -116,14 +143,12 @@ button:hover, input:hover {
     line-height : 12px;
 }
 
-
 .removeBtn{
     position: absolute;
     margin: 20px;
     cursor: pointer;
     margin-left: 230px;
     opacity: 0;
-    /* border: 1px solid black; */
     height: 20px;
     width: 20px;
     padding: 20px;
@@ -131,6 +156,9 @@ button:hover, input:hover {
 
 .removeBtn:hover{
     opacity: 1;
-    animation-name: fadeIn;
-    animation-duration: 0.5s;
+    transition-duration: 0.4s;
+}
+
+.removeBtn:not(hover){
+    transition-duration: 0.4s;
 }

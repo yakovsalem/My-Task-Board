@@ -1,6 +1,5 @@
 let allTasks = [];
 
-
 loadStorage();
 
 function loadStorage(){
@@ -50,17 +49,39 @@ function printTasks(allTasks){
         const note = `
         <div class="note" id="${obj.id}">
             <i class="bi-x-square-fill removeBtn" onclick="removeTask(${obj.id})"></i>
-            <div class="noteText">${obj.taskText}</div>
+            <div class="noteText" dir="auto">${obj.taskText}</div>
             <div class="noteData">
             <p>${obj.date}</p>
             <p>${obj.time}</p>
         </div>`
         notesArea.innerHTML += note;
     }
+    // for(let i = 0; i < allTasks.length; i++){
+    //     if (i === allTasks.length - 1){
+    //         const note = `
+    //         <div class="note fadeIn" id="${allTasks[i].id}">
+    //         <i class="bi-x-square-fill removeBtn" onclick="removeTask(${allTasks[i].id})"></i>
+    //         <div class="noteText">${allTasks[i].taskText}</div>
+    //         <div class="noteData">
+    //         <p>${allTasks[i].date}</p>
+    //         <p>${allTasks[i].time}</p>
+    //         </div>`
+    //         notesArea.innerHTML += note;
+    //     } else {
+    //         const note = `
+    //         <div class="note" id="${allTasks[i].id}">
+    //         <i class="bi-x-square-fill removeBtn" onclick="removeTask(${allTasks[i].id})"></i>
+    //         <div class="noteText">${allTasks[i].taskText}</div>
+    //         <div class="noteData">
+    //         <p>${allTasks[i].date}</p>
+    //         <p>${allTasks[i].time}</p>
+    //         </div>`
+    //         notesArea.innerHTML += note;
+    //     }
+    // }
 }
 
 function removeTask(id){
-    // allTasks = readStorage ();
     for (let i = 0; i < allTasks.length; i++) {
         if(allTasks[i].id == id){
             allTasks.splice(i, 1);
