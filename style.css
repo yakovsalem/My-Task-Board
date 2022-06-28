@@ -65,7 +65,6 @@ textarea:focus{
 input, button{
     text-transform: uppercase;
     border: none;
-    /* border-radius: 8px; */
     background-color: rgb(232, 203, 166);
     padding: 15px 0px;
     margin: 5px 3px;
@@ -73,7 +72,6 @@ input, button{
     text-align: center;
     font-size: 16px;
 }
-
 
 button:hover, input:hover {
     background-color: rgb(101, 74, 38);
@@ -91,7 +89,6 @@ button:not(hover), input:not(hover) {
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
-    /* justify-content: center; */
     height: 100%;
 }
 
